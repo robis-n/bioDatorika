@@ -1,0 +1,478 @@
+@font-face {
+	font-family: 'Noto Sans';
+	src: url(./font/NotoSans-Regular.ttf);
+}
+
+/* Galvenā stilizēšana */
+/* kopumaa seit ir tikai par footeri un par headeru */
+
+:root{
+	--baltais: #f0f0f0;
+	--pelekais: #a8a8a8;
+	--g-pelekais: #dddddd;
+	--g-t-pelekais: #8d8d8d;
+	--t-pelekais: #333;
+	--zilzalais: #a8bbbb;
+	--zilais: #84a8c0;
+	--melnais: #111;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+body{
+	position: relative;
+	background-color: var(--g-pelekais);
+	text-align: justify;
+}
+
+header{
+	z-index: 10000;
+	position:fixed;
+	width: 100%;
+	display: block;
+	margin-bottom: 0;
+	min-height: 10vh;
+}
+
+.nav-aiz{
+	display: flex;
+    min-height: calc(10vh + 1rem + 5px);
+	position: relative;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    font-family: monospace;
+    background-color: var(--pelekais);
+	overflow: hidden;
+	outline: 1rem solid var(--zilzalais);
+}
+
+.nosaukums{
+    color: var(--baltais);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 2.4rem;
+	padding-top: 5px;
+}
+
+.nodalas{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+	padding-right: 15px;
+}
+
+.nodalas li{
+    list-style: none;
+}
+
+.nodalas a{
+    color: var(--baltais);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+	padding: 13px 30px;
+	transition: 0.3s ease;
+	border-radius: 15px;
+	margin-left: 5px;
+}
+
+.nodalas li a:hover{
+	background: var(--zilzalais);
+}
+
+/* temas */
+
+.linijas{
+    display:none;
+    cursor: pointer;
+}
+
+.linijas div{
+    width:25px;
+    height: 4px;
+    background-color: var(--baltais);
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1010px){
+    body{
+        overflow-y:auto;
+		overflow-x: hidden;
+    }
+
+	.nav{
+		outline-width: 0.7rem;
+		transition: 1s ease;
+	}
+
+	.nav-aiz{
+		height: 1.3cm;
+		position: relative;
+	}
+
+	.nosaukums{
+		font-size: 1.5rem;
+		transition: 1s ease;
+	}
+
+    .nodalas{
+        position: absolute;
+        right: 0px;
+        height:92vh;
+        top: 10vh !important;
+        background-color: var(--zilzalais);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        transform: translateX(100%);
+        transition: 0.5s ease;
+		z-index: 100;
+		padding-bottom: 0;
+		padding-right: 0;
+    }
+
+    .nodalas li{
+        opacity: 0;
+    }
+
+	.nodalas li a:hover{
+		background: var(--pelekais);
+	}
+
+    .linijas{
+        display: block;
+    }
+}
+
+/** prieks dazadiem ekrana izmeriem **/
+
+@media screen and (max-width: 986px) and (max-height:720px){
+	.nodalas{
+		z-index: -1;
+	}
+}
+
+@media screen and (max-height:590px) and (max-width: 986px){
+	.nodalas{
+		top: calc(2.5rem + 25px) !important;
+	}
+
+	.nav-aiz{
+		height: 1.3cm;
+		position: relative;
+	}
+}
+
+@media screen and (max-height:387px) and (max-width: 986px){
+	.nodalas{
+		justify-content: space-between;
+		overflow-y: auto;
+		top: 1.3cm;
+	}
+
+	.nav-aiz{
+		height: 1.3cm;
+		position: relative;
+	}
+}
+
+@media screen and (max-height:387px) and (max-width: 986px){
+	.nav-aiz{
+		height: 1.3cm;
+		position: relative;
+	}
+
+	.nodalas{
+		justify-content: center;
+		overflow-y: auto;
+		top: 1.3cm !important;
+		z-index: -1;
+	}
+
+	.nodalas li a{
+		display: block;
+		padding: 0.5rem !important;
+		margin-bottom: 0.5rem !important;
+	}
+}
+
+@media screen and (max-height: 325px) and (max-width: 986px){
+	.nodalas{
+		justify-content: center;
+		overflow-y: auto;
+		top: 1.3cm !important;
+		z-index: -1;
+	}
+
+	.nodalas li a{
+		display: block;
+		padding: 0.5rem !important;
+		margin-bottom: 0.5rem !important;
+	}
+}
+
+@media screen and (max-height:720px){
+	.nav-aiz{
+		height: calc(10vh + 1rem + 5px);
+		position: relative;
+	}
+
+	.nav{
+		height: calc(10vh + 1rem + 5px);
+	}
+
+	.nosaukums{
+		font-size: 1.3rem;
+		transition: 1s ease;
+	}
+}
+
+.nav-active{
+    transform: translateX(0%);
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform:translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* footeris */
+
+footer{
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background: var(--pelekais);
+	color: var(--baltais);
+}
+
+.foot-konteksts{
+    display: flex;
+}
+
+.foot-konteksts .kaste{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+.kaste h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+	letter-spacing: 2px;
+}
+
+.kaste .konteksts{
+    margin: 20px 0 0 0;
+	position:relative
+}
+
+.kaste .konteksts::before{
+	position: absolute;
+	content: '';
+	top: -10px;
+	height: 2px;
+	width: 100%;
+	background: var(--baltais);
+}
+
+.kaste .konteksts::after{
+	position: absolute;
+	content: "";
+	height: 2px;
+	width: 15%;
+	background: var(--zilzalais);
+	top: -10px;
+}
+
+.kreisa .konteksts p{
+    text-align: justify;
+}
+
+.kreisa .konteksts .social{
+    margin: 20px 0 0 0;
+}
+
+.kreisa .konteksts .social a{
+    padding: 0 2px;
+}
+
+.kreisa .konteksts .social a .ikona{
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+    padding: 5px;
+    background: var(--baltais);
+}
+
+.kreisa .konteksts .social a :hover{
+    background: var(--zilais);
+}
+
+.centrs .konteksts .simb{
+	align-items: center;
+	display: flex;
+}
+
+.centrs .konteksts .ikona{
+    font-size: 1.4375rem;
+    background: var(--baltais);
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.centrs .konteksts .vieta:hover,
+.centrs .konteksts .mob:hover,
+.centrs .konteksts .pasts:hover{
+    background: var(--zilais);
+}
+
+.centrs .konteksts .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.centrs .konteksts .mob{
+	margin: 10px 0;
+}
+
+.laba form .text{
+	font-size: 1.0625rem;
+	margin-bottom: 2px;
+	color: var(--baltais);
+}
+
+.laba form .iisz{
+	margin-top: 10px;
+}
+
+.laba form input, .laba form textarea{
+	width: 100%;
+	font-size: 1.0625rem;
+	background: var(--baltais);
+	padding-left: 10px;
+	border: 1px solid var(--zilzalais);
+}
+
+.laba form input:focus,
+.laba form textarea:focus{
+	outline-color: var(--zilais);
+}
+
+.laba form input{
+	height: 30px;
+}
+
+.laba form .poga{
+	margin-top:10px;
+}
+
+.laba form .poga button{
+	height: 40px;
+	width: 100%;
+	border:none;
+	outline: none;
+	background: var(--zilzalais);
+	font-size: 1.0625rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.laba form .poga button:hover{
+	background: var(--zilais);
+}
+
+.apaksa center{
+	padding: 5px;
+	font-size: 0.9375rem;
+	background: var(--t-pelekais);
+}
+
+.apaksa center span{
+	color: var(--baltais);
+}
+
+.apaksa center a{
+	color: var(--zilzalais);
+	text-decoration: none;
+}
+
+.apaksa center a:hover{
+	text-decoration: underline;
+	color: var(--zilais);
+}
+
+/* ekrana izmeriem */
+
+@media screen and (max-width: 980px){
+	.footer{
+		position:relative;
+		bottom: 0px;
+		margin-bottom: 0;
+		display: flex;
+		flex-direction: column;
+		padding-top: 0;
+	}
+
+	.foot-konteksts{
+		flex-wrap: wrap;
+		flex-direction: column;
+		position: relative;
+		margin-top: 0;
+		color: var(--baltais);
+		margin-bottom: auto;
+	}
+
+	.foot-konteksts .kaste{
+		margin: 5px 0;
+	}
+
+	.apaksa{
+		margin-top: 0;
+		padding: 0;
+	}
+}

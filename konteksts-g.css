@@ -1,0 +1,379 @@
+/* galvenas lapas konteksta stilizēšana */
+
+.elp-sekcija .sakuma-virsraksts h2{
+	text-align: left;
+	padding: 5px 10px 5px;
+	display:block;
+	border-radius: 2em;
+	font-size: 2.4rem;
+	height: 10%;
+	letter-spacing: 1.5px;
+	margin: 20px 3% 0;
+}
+
+.elp-sekcija .elp-kaste .elp-konteksts p{
+	margin: 0 3% 3%;
+	padding: 5px 10px 5px;
+	font-size: 1.5rem;
+	transition: 1s ease;
+	border-radius: 3px 20px 5px 5px;
+	height: 90%;
+	position: relative;
+	text-align: justify;
+}
+
+.elp-sekcija .elp-kaste .elp-konteksts p:hover{
+	background: var(--pelekais);
+	border-radius: 0 0 20px 20px;
+}
+
+.elp-sekcija .elp-kaste .svitra::before{
+    content: "";
+    display:block;
+    height: 5px;
+    background-color: var(--t-pelekais);
+    transition: ease-in 0.5s;
+    width: 0%;
+	bottom: 0;
+	position: relative;
+	border-bottom-right-radius: 50%;
+	border-top-right-radius: 50%;
+}
+
+.elp-sekcija .elp-kaste:hover .svitra::before{
+    width: 100%;
+	border-bottom-right-radius: 0%;
+	border-top-right-radius: 0%;
+	background: var(--zilais);
+}
+
+/* video sekcija */
+
+.video-sekcija{
+	position: relative;
+	justify-content: center;
+}
+
+.video-teksts{
+	display: block;
+	text-align: left;
+	padding: 5px 10px 5px;
+	height: 10%;
+	letter-spacing: 1.5px;
+	margin: 20px 3% 0;
+	padding: 10px 5px;
+}
+
+.video-teksts h2{
+	font-size: 2.4rem;
+	padding: 0px 10px;
+}
+
+.pirms-video-svitra{
+    content: "";
+    display:block;
+    height: 5px;
+    background-color: var(--t-pelekais);
+    transition: ease-in 0.5s;;
+    width: 0%;
+	bottom: 0;
+	position: relative;
+	border-bottom-right-radius: 50%;
+	border-top-right-radius: 50%;
+	transition-delay: 0.3s;
+}
+
+.video-sekcija:hover .pirms-video-svitra{
+    width: 100%;
+	border-bottom-right-radius: 0%;
+	border-top-right-radius: 0%;
+	background: var(--zilais);
+}
+
+.video-kaste{
+	display: flex;
+	justify-content: center;
+	position: relative;
+	margin: 0 20%;
+	background: var(--g-pelekais);
+	transition: 0.7s ease-in-out;
+	border-radius: 150px;
+}
+
+.video-kaste:hover{
+	background:var(--pelekais);
+}
+
+.video-kont{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	padding: 15px 30px;
+	border: 10px solid #000;
+	text-transform: uppercase;
+	color: var(--melnais);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 20px;
+	background:var(--g-pelekais);
+	border-radius: 5px;
+}
+
+.video-kont:hover{
+	background: #000;
+	transition: 0.2s ease-in-out;
+	border-radius: 0;
+	transition-delay: 1s;
+}
+
+.video-kont::before{
+	content: '';
+	position: absolute;
+	top: 6px;
+	left: -10px;
+	width: calc(100% + 20px);
+	height: calc(100% - 12px);
+	background: var(--g-pelekais);
+	transition: 0.5s ease-in-out;
+	transform: scaleY(1);
+	transition-delay: 0.5s;
+}
+
+.video-kont:hover::before{
+	transform: scaleY(0);
+	background: var(--g-pelekais);
+}
+
+.video-kont::after{
+	content: '';
+	position: absolute;
+	left: 6px;
+	top: -10px;
+	height: calc(100% + 20px);
+	width: calc(100% - 12px);
+	background: var(--g-pelekais);
+	transition: 0.5s ease-in-out;
+	transform: scaleX(1);
+}
+
+.video-kont:hover::after{
+	transform: scaleX(0);
+}
+
+.video-kont .video{
+	position: relative;
+	z-index: 3;
+}
+
+/* sekcija - ko uzzinaasi maajaslapaa? */
+
+.galv-ped-sekc{
+	position: relative;
+}
+
+.ko-uzzinasi-virsraksts{
+	text-align: left;
+	padding: 5px 10px 5px;
+	display:block;
+	border-radius: 2em;
+	height: 10%;
+	letter-spacing: 1.5px;
+	margin: 20px 3% 0;
+}
+
+.ko-uzzinasi-virsraksts h2{
+	font-size: 2.4rem;
+	padding: 10px 5px;
+}
+
+.uzzinasanas-skaidrojums{
+	margin: 0 3% 2%;
+	padding: 0px 5px 5px;
+	font-size: 1.5rem;
+	transition: 1s ease;
+	height: 90%;
+	position: relative;
+	text-align: center;
+	border-radius: 3px 20px 5px 5px;
+}
+
+.uzzinasanas-skaidrojums:hover{
+	background: var(--pelekais);
+	border-radius: 0 0 20px 20px;
+}
+
+.uzzinasanas-skaidrojums p{
+	margin: 0 10px 10px;
+	text-align: left;
+}
+
+.uzzinasanas-skaidrojums li{
+	display: flex;
+	position: relative;
+	text-align: justify;
+	padding: 0px 10px;
+	margin-bottom: 10px;
+	display: flex;
+}
+
+.uzzinasanas-skaidrojums li a{
+	text-decoration: none;
+	color: var(--melnais);
+}
+
+.uzzinasanas-skaidrojums li a:hover{
+	text-decoration: underline;
+	text-decoration-color: var(--t-pelekais);
+}
+
+.temu-teksts{
+	border-radius: 0px;
+	transition: 0.2s;
+}
+
+.temu-teksts:hover{
+	background: var(--g-t-pelekais);
+	border-radius: 10px;
+}
+/* pedeja svitra - animacija */
+
+.galv-ped-sekc .ped-content .ped-svitra::before{
+    content: "";
+    display:block;
+    height: 5px;
+    background-color: var(--t-pelekais);
+    transition: ease-in 0.5s;
+    width: 0%;
+	bottom: 0;
+	position: relative;
+	border-bottom-right-radius: 50%;
+	border-top-right-radius: 50%;
+}
+
+.galv-ped-sekc .ped-content:hover .ped-svitra::before{
+    width: 100%;
+	border-bottom-right-radius: 0%;
+	border-top-right-radius: 0%;
+	background: var(--zilais);
+}
+
+/* temas - linijas mainisanas */
+/*domu zime */
+
+.uzzinasanas-skaidrojums ul li img{
+	position:relative;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	display: inline-flex;
+	float: left;
+	padding-right: 10px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+/*sarkana domu sime */
+
+.sarkana{
+	display: none !important;
+}
+
+.temu-teksts:hover .sarkana{
+	display: flex !important;
+}
+
+.temu-teksts:hover .melna{
+	display: none;
+}
+
+/* prieks dazadie izmeriem utt. */
+
+@media screen and (max-width:1850px){
+	.video-kaste{
+		margin: 0 2px;
+	}
+}
+
+@media screen and (max-width:1500px){
+	.video{
+		width: 610px;
+		height: 345px;
+	}
+}
+
+@media screen and (max-width: 1000px){
+	.video{
+		width: 400px;
+		height: 225px;
+	}
+
+	.elp-sekcija .sakuma-virsraksts h2{
+		font-size: 1.5rem;
+		transition: 1s ease;
+	}
+
+	.video-teksts h2{
+		font-size: 1.5rem;
+		transition: 1s ease;
+	}
+
+	.ko-uzzinasi-virsraksts h2{
+		font-size: 1.5rem;
+		transition: 1s ease;
+	}
+}
+
+@media screen and (max-height: 720px){
+	.video{
+		width: 450px;
+		height: 252px;
+	}
+
+	.elp-sekcija .sakuma-virsraksts .hdivi{
+		font-size: 1.5rem;
+		transition: 1s ease;
+	}
+
+	.video-teksts .hdivi{
+		font-size: 1.5rem;
+		transition: 1s ease;
+	}
+
+	.ko-uzzinasi-virsraksts .hdivi{
+		font-size: 1.5rem;
+		transition: 1s ease;
+	}
+}
+
+@media screen and (max-width: 666px){
+	.video-kaste{
+		margin: 0 2px;
+	}
+}
+
+@media screen and (max-width: 600px){
+    .video{
+		width: 150px;
+		height: 85px;
+	}
+
+	.video-kaste{
+		margin: 0 10%;
+	}
+}
+
+/*sakums - hover */
+.n-sakums{
+	background: var(--zilzalais);
+}
+
+.n-sakums:hover{
+	background: var(--zilais) !important;
+}
+
+@media screen and (max-width:1010px){
+	.n-sakums{
+		background: var(--pelekais);
+	}
+}
